@@ -1,0 +1,30 @@
+.homeSection {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.homeSection h1 {
+  font-size: 4rem;
+  font-weight: 400;
+  color: var(--main-color);
+}
+
+.homeSection p {
+  font-size: 2rem;
+  color: var(--text-color);
+  margin: 45px 0;
+}
+.homeSection button {
+  border: none;
+  border-radius: 30px;
+  font-size: 2rem;
+  background-color: #f9e9ed;
+  color: var(--main-color);
+  padding: 2px 120px;
+}
+
+.homeSection img {
+  border-radius: 10px;
+  width: 25rem;
+}

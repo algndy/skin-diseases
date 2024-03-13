@@ -1,0 +1,8 @@
+.pageNav {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  font-size: 2rem;
+  list-style-type: none;
+  color: var(--main-color);
+}
