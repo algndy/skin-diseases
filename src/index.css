@@ -10,4 +10,25 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Outfit";
+  font-weight: 400;
+}
+.react-slideshow-container + ul.indicators {
+  display: flex;
+  gap: 10px;
+}
+.react-slideshow-container + ul.indicators .each-slideshow-indicator:before {
+  width: 5px;
+  height: 5px;
+  border: 4px solid black;
+  background-color: white;
+}
+.react-slideshow-container .nav:last-of-type,
+.react-slideshow-container .default-nav:first-of-type {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0);
+}
+.react-slideshow-container .nav:last-of-type:hover,
+.react-slideshow-container .nav:first-of-type:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
