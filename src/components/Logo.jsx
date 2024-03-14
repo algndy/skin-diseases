@@ -1,5 +1,6 @@
+import styles from "./Logo.module.css";
 function Logo() {
-  return <img width={170} src="logo.png" alt="logo" />;
+  return <img className={styles.logo} src="logo.png" alt="logo" />;
 }
 
 export default Logo;

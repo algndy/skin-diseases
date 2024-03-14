@@ -21,6 +21,7 @@
   background-color: #f9e9ed;
   color: var(--main-color);
   padding: 2px 120px;
+  cursor: pointer;
 }
 
 .homeSection img {

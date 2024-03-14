@@ -6,3 +6,6 @@
   list-style-type: none;
   color: var(--main-color);
 }
+.pageNav li {
+  cursor: pointer;
+}

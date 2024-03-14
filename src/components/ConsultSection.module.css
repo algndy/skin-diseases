@@ -1,0 +1,23 @@
+.consultSection {
+  background-color: var(--text-color);
+  color: white;
+  margin: 50px 0;
+  width: 100%;
+  text-align: center;
+  padding: 5rem;
+  font-size: 1.3rem;
+}
+.consultSection h1 {
+  margin: 40px 0;
+}
+
+.consultSection button {
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 13px;
+  padding: 10px 30px;
+  font-size: 1.2rem;
+  font-weight: 300;
+  cursor: pointer;
+}

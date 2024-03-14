@@ -29,7 +29,7 @@ function DiseasesSection() {
           slidesToScroll={1}
           slidesToShow={1}
           indicators={true}
-          autoplay={false}
+          autoplay={true}
         >
           {DISEASES.map((disease, i) => (
             <div className={styles.card} key={i}>
