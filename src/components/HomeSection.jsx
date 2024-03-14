@@ -14,7 +14,9 @@ function HomeSection() {
         </p>
         <button>TRY NOW</button>
       </div>
-      <img src="homeImg.png" alt="homeImg" />
+      <div>
+        <img src="homeImg.png" alt="homeImg" />
+      </div>
     </section>
   );
 }
