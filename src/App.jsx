@@ -6,6 +6,7 @@ import ConsultSection from "./components/ConsultSection";
 import AppSection from "./components/AppSection";
 import Main from "./components/Main";
 import AboutUsSection from "./components/AboutUsSection";
+import Acknowledge from "./components/Acknowledge";
 function App() {
   return (
     <div className={styles.container}>
@@ -17,6 +18,7 @@ function App() {
           <ConsultSection />
           <AppSection />
           <AboutUsSection />
+          <Acknowledge />
         </>
       </Main>
     </div>

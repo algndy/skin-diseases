@@ -1,0 +1,58 @@
+.aboutUsSection {
+  width: 100%;
+  text-align: center;
+  height: 100hv;
+  padding: 0 3rem;
+}
+.aboutUsSection h1 {
+  font-size: 2.3rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 3rem;
+}
+.card {
+  display: flex;
+  justify-content: center;
+}
+.card .first {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  background-color: rgb(245, 245, 245);
+}
+.card .last {
+  text-align: left;
+  padding: 50px 40px;
+  width: 35%;
+  background-color: var(--text-color);
+  color: white;
+}
+.card .last h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 50px;
+}
+.card .last h3 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.card .last .phones {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+.card .last .phones div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+.card .last .phones div p {
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+.card .last .socialMedia {
+  display: flex;
+  gap: 10px;
+}

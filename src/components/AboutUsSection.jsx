@@ -1,8 +1,81 @@
 import styles from "./AboutUsSection.module.css";
+import { Slide } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
+const TEAM = [
+  {
+    name: "Mohamed Kamal",
+    photo: "team/mk.png",
+    jobTitle: "Front-End Developer",
+    phones: ["01227300872"],
+    socialMedia: {
+      whatsApp: "https://wa.me/201227300872",
+      linkedIn: "https://www.linkedin.com/in/mohamedkamal-in/",
+    },
+  },
+  {
+    name: "Banoub Nagy",
+    photo: "team/bn.png",
+    jobTitle: "AI Developer",
+    phones: ["01024071289"],
+    socialMedia: {
+      whatsApp: "https://wa.me/201024071289",
+      linkedIn: "https://www.linkedin.com/in/banoub-nagy-edwar-b33b15277/",
+    },
+  },
+];
 function AboutUsSection() {
   return (
-    <section>
+    <section className={styles.aboutUsSection}>
       <h1>About us</h1>
+
+      <Slide
+        slidesToScroll={1}
+        slidesToShow={1}
+        indicators={true}
+        autoplay={true}
+      >
+        {TEAM.map((teamMember, i) => (
+          <div className={styles.card} key={i}>
+            <div className={styles.first}>
+              <img src={teamMember.photo} width="200px" alt="homeImg.png" />
+            </div>
+            <div className={styles.last}>
+              <h2>{teamMember.name}</h2>
+              <h3>{teamMember.jobTitle}</h3>
+              <div className={styles.phones}>
+                {teamMember.phones.map((phone, i) => (
+                  <div key={i}>
+                    <img width={40} src="phone.png" alt="phone-icon" />
+                    <p>{phone}</p>
+                  </div>
+                ))}
+              </div>
+              <div className={styles.socialMedia}>
+                {teamMember.socialMedia.linkedIn && (
+                  <a target="_blank" href={teamMember.socialMedia?.linkedIn}>
+                    <img width={35} src="linkedin.png" alt="linkedIn-icon" />
+                  </a>
+                )}
+                {teamMember.socialMedia.whatsApp && (
+                  <a target="_blank" href={teamMember.socialMedia?.whatsApp}>
+                    <img width={35} src="whatsapp.png" alt="whatsApp-icon" />
+                  </a>
+                )}
+                {teamMember.socialMedia.facebook && (
+                  <a target="_blank" href={teamMember.socialMedia?.facebook}>
+                    <img width={35} src="facebook.png" alt="facebook-icon" />
+                  </a>
+                )}
+                {teamMember.socialMedia.twitter && (
+                  <a target="_blank" href={teamMember.socialMedia?.twitter}>
+                    <img width={35} src="twitter.png" alt="twitter-icon" />
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </Slide>
     </section>
   );
 }
