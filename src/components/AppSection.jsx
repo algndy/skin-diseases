@@ -1,7 +1,7 @@
 import styles from "./AppSection.module.css";
-function AppSection() {
+function AppSection({ appRef }) {
   return (
-    <section className={styles.appSection}>
+    <section ref={appRef} className={styles.appSection}>
       <h1>Check Your Self & Your Patients Easly</h1>
       <div>
         <h1>

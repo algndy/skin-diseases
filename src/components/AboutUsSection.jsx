@@ -23,9 +23,9 @@ const TEAM = [
     },
   },
 ];
-function AboutUsSection() {
+function AboutUsSection({ aboutUsRef }) {
   return (
-    <section className={styles.aboutUsSection}>
+    <section ref={aboutUsRef} className={styles.aboutUsSection}>
       <h1>About us</h1>
 
       <Slide

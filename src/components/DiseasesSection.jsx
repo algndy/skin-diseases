@@ -20,9 +20,9 @@ const DISEASES = [
   },
 ];
 
-function DiseasesSection() {
+function DiseasesSection({ discoverRef }) {
   return (
-    <section className={styles.diseasesSection}>
+    <section ref={discoverRef} className={styles.diseasesSection}>
       <h1>Discover Dermatology</h1>
       <div>
         <Slide

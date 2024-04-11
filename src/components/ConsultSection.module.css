@@ -1,11 +1,12 @@
 .consultSection {
   background-color: var(--text-color);
   color: white;
-  margin: 50px 0;
+  margin-top: 50px;
   width: 100%;
   text-align: center;
   padding: 5rem;
   font-size: 1.4rem;
+  margin-top: 100px;
 }
 .consultSection h1 {
   margin: 40px 0;

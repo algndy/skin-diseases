@@ -7,17 +7,22 @@ import AppSection from "./components/AppSection";
 import Main from "./components/Main";
 import AboutUsSection from "./components/AboutUsSection";
 import Acknowledge from "./components/Acknowledge";
+import { useRef } from "react";
 function App() {
+  const discover = useRef(null);
+  const app = useRef(null);
+  const aboutUs = useRef(null);
+
   return (
     <div className={styles.container}>
-      <Header />
+      <Header appRef={app} aboutUsRef={aboutUs} discoverRef={discover} />
       <Main>
         <>
           <HomeSection />
-          <DiseasesSection />
+          <DiseasesSection discoverRef={discover} />
           <ConsultSection />
-          <AppSection />
-          <AboutUsSection />
+          <AppSection appRef={app} />
+          <AboutUsSection aboutUsRef={aboutUs} />
           <Acknowledge />
         </>
       </Main>
