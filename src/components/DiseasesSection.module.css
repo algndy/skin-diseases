@@ -1,8 +1,7 @@
 .diseasesSection {
   width: 100%;
   text-align: center;
-  height: 100hv;
-  padding: 5rem 3rem;
+  padding: 5rem 3rem 0;
 }
 .diseasesSection h2,
 .diseasesSection h1 {
@@ -10,7 +9,7 @@
   font-size: 2.5rem;
 }
 .diseasesSection h1 {
-  margin: 80px 0;
+  margin-bottom: 80px;
 }
 
 .diseasesSection p {

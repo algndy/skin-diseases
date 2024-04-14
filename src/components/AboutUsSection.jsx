@@ -22,6 +22,17 @@ const TEAM = [
       linkedIn: "https://www.linkedin.com/in/banoub-nagy-edwar-b33b15277/",
     },
   },
+  {
+    name: "Maryam Mohamed",
+    photo: "team/mm.png",
+    jobTitle: "AI Developer",
+    phones: ["01006517272", "01210400751"],
+    socialMedia: {
+      whatsApp: "https://wa.me/201006517272",
+      linkedIn: "https://www.linkedin.com/in/maryam-mohamedd/",
+      facebook: "https://www.facebook.com/profile.php?id=100012562810123",
+    },
+  },
 ];
 function AboutUsSection({ aboutUsRef }) {
   return (
