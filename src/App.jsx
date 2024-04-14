@@ -8,7 +8,9 @@ import Main from "./components/Main";
 import AboutUsSection from "./components/AboutUsSection";
 import Acknowledge from "./components/Acknowledge";
 import { useRef } from "react";
+import Footer from "./components/Footer";
 function App() {
+  const home = useRef(null);
   const discover = useRef(null);
   const app = useRef(null);
   const aboutUs = useRef(null);
@@ -18,12 +20,18 @@ function App() {
       <Header appRef={app} aboutUsRef={aboutUs} discoverRef={discover} />
       <Main>
         <>
-          <HomeSection />
+          <HomeSection homeRef={home} />
           <DiseasesSection discoverRef={discover} />
           <ConsultSection />
           <AppSection appRef={app} />
           <AboutUsSection aboutUsRef={aboutUs} />
           <Acknowledge />
+          <Footer
+            homeRef={home}
+            appRef={app}
+            aboutUsRef={aboutUs}
+            discoverRef={discover}
+          />
         </>
       </Main>
     </div>

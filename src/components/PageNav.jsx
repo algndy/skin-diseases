@@ -1,5 +1,5 @@
 import styles from "./PageNav.module.css";
-function PageNav({ appRef, aboutUsRef, discoverRef }) {
+function PageNav({ homeRef, appRef, aboutUsRef, discoverRef }) {
   function handleScrollTo(elemRef) {
     window.scrollTo({
       top: elemRef.current.offsetTop,
@@ -8,6 +8,7 @@ function PageNav({ appRef, aboutUsRef, discoverRef }) {
   }
   return (
     <ul className={styles.pageNav}>
+      <li onClick={() => handleScrollTo(homeRef)}>Home</li>
       <li onClick={() => handleScrollTo(discoverRef)}>Discover</li>
       <li onClick={() => handleScrollTo(appRef)}>App</li>
       <li onClick={() => handleScrollTo(aboutUsRef)}>About us</li>

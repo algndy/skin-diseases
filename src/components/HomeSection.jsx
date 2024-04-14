@@ -1,7 +1,7 @@
 import styles from "./HomeSection.module.css";
-function HomeSection() {
+function HomeSection({ homeRef }) {
   return (
-    <section className={styles.homeSection}>
+    <section className={styles.homeSection} ref={homeRef}>
       <div>
         <h1>
           Caring for you &<br />
