@@ -6,6 +6,52 @@
   list-style-type: none;
   color: var(--main-color);
 }
+.pageNavSmall {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: -277px;
+  transform-origin: top;
+  transform: scaleY(1);
+  left: 0;
+  z-index: -1;
+  background-color: antiquewhite;
+  width: 100%;
+  padding: 20px 0;
+  align-items: center;
+  gap: 2rem;
+  font-size: 2rem;
+  list-style-type: none;
+  color: var(--main-color);
+  transition: transform 600ms;
+}
+.pageNavHiddenSmall {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: -277px;
+  transform-origin: top;
+  transform: scaleY(0);
+  left: 0;
+  z-index: -1;
+  background-color: antiquewhite;
+  width: 100%;
+  padding: 20px 0;
+  align-items: center;
+  gap: 2rem;
+  font-size: 2rem;
+  list-style-type: none;
+  color: var(--main-color);
+  transition: transform 600ms;
+}
+.pageNavSmall li {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+.pageNavHiddenSmall li {
+  opacity: 0.1;
+  transition: opacity 400ms;
+}
 .pageNav li {
   cursor: pointer;
 }

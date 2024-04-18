@@ -1,0 +1,18 @@
+.burgerBar {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+.burgerBar div {
+  width: 35px;
+  height: 6px;
+  border-radius: 50px;
+  background-color: black;
+}
+/* @media screen and (min-width: 900px) {
+  .burgerBar {
+    display: none;
+  }
+} */

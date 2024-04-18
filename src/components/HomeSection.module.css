@@ -30,3 +30,58 @@
   border-radius: 10px;
   width: 25rem;
 }
+
+@media screen and (max-width: 1100px) {
+  .homeSection h1 {
+    font-size: 3rem;
+  }
+  .homeSection p {
+    font-size: 1.5rem;
+    margin: 30px 0;
+  }
+  .homeSection button {
+    font-size: 1.5rem;
+    padding: 2px 90px;
+  }
+  .homeSection img {
+    border-radius: 10px;
+    width: 20rem;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .homeSection h1 {
+    font-size: 2rem;
+  }
+  .homeSection p {
+    font-size: 1.2rem;
+    margin: 30px 0;
+  }
+  .homeSection button {
+    font-size: 1.2rem;
+    padding: 2px 70px;
+  }
+  .homeSection img {
+    border-radius: 10px;
+    width: 15rem;
+  }
+}
+@media screen and (max-width: 630px) {
+  .homeSection div:last-child {
+    display: none;
+  }
+  .homeSection div:first-child {
+    text-align: center;
+  }
+  .homeSection h1 {
+    font-size: 3rem;
+  }
+  .homeSection p {
+    font-size: 1.6rem;
+  }
+  .homeSection button {
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 5px 100px;
+  }
+}

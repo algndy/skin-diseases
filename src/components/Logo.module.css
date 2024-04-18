@@ -2,3 +2,8 @@
   width: 170px;
   cursor: pointer;
 }
+@media screen and (max-width: 850px) {
+  .logo {
+    width: 120px;
+  }
+}
