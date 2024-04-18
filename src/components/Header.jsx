@@ -35,6 +35,7 @@ function Header({ appRef, aboutUsRef, discoverRef }) {
         </div>
       ) : isShowNav ? (
         <PageNav
+          setisShowNav={setisShowNav}
           windowWidth={windowWidth}
           isShowNav={isShowNav}
           appRef={appRef}
@@ -43,6 +44,7 @@ function Header({ appRef, aboutUsRef, discoverRef }) {
         />
       ) : (
         <PageNav
+          setisShowNav={setisShowNav}
           windowWidth={windowWidth}
           isShowNav={isShowNav}
           appRef={appRef}

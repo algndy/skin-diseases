@@ -16,6 +16,7 @@
   color: var(--text-color);
   font-size: 1.5rem;
   margin-top: 50px;
+  text-align: justify;
 }
 .card {
   display: flex;
@@ -35,4 +36,87 @@
   flex-direction: column;
   width: 30%;
   text-align: left;
+}
+
+@media screen and (max-width: 1050px) {
+  .card {
+    gap: 8rem;
+  }
+  .card div:first-child img {
+    width: 300px;
+  }
+
+  .diseasesSection h2,
+  .diseasesSection h1 {
+    font-size: 2.3rem;
+  }
+
+  .diseasesSection p {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .card {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 20px;
+  }
+  .card div:first-child img {
+    width: 250px;
+  }
+
+  .card div:last-child {
+    width: 70%;
+    text-align: center;
+  }
+
+  .diseasesSection p {
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .diseasesSection h1 {
+    margin-bottom: 50px;
+  }
+
+  .card div:first-child {
+    display: flex;
+    width: 100%;
+    text-align: center;
+  }
+  .card div:first-child img {
+    height: 85px;
+    width: 70%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .diseasesSection {
+    padding: 2rem 3rem 0;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .diseasesSection h2,
+  .diseasesSection h1 {
+    font-size: 2rem;
+  }
+
+  .diseasesSection p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .diseasesSection h2,
+  .diseasesSection h1 {
+    font-size: 1.6rem;
+  }
+
+  .diseasesSection p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
 }

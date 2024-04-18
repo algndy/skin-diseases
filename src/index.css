@@ -32,3 +32,16 @@
 .react-slideshow-container .nav:first-of-type:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
+
+@media screen and (max-width: 500px) {
+  .react-slideshow-container .nav:last-of-type,
+  .react-slideshow-container .default-nav:first-of-type {
+    width: 30px;
+    height: 30px;
+  }
+  .react-slideshow-container .nav:last-of-type svg,
+  .react-slideshow-container .default-nav:first-of-type svg {
+    width: 20px;
+    height: 20px;
+  }
+}

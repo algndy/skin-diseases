@@ -6,6 +6,7 @@ function PageNav({
   aboutUsRef,
   discoverRef,
   isShowNav,
+  setisShowNav,
   windowWidth,
 }) {
   function handleScrollTo(elemRef) {
@@ -13,6 +14,7 @@ function PageNav({
       top: elemRef.current.offsetTop,
       behavior: "smooth",
     });
+    setisShowNav(false);
   }
   return (
     <ul

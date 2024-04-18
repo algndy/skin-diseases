@@ -34,7 +34,7 @@ function DiseasesSection({ discoverRef }) {
           {DISEASES.map((disease, i) => (
             <div className={styles.card} key={i}>
               <div>
-                <img src="homeImg.png" alt="homeImg.png" />
+                <img src="diseases/melanocity.png" alt="homeImg.png" />
               </div>
               <div>
                 <h2>{disease.name}</h2>
