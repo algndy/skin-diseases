@@ -1,0 +1,34 @@
+.successSection div{
+    background-image: none !important;
+    border: none !important;
+    padding: none !important;
+    
+    /* width: 100% !important;
+    height: 100% !important; */
+}
+
+.successSection{
+    padding: 0 !important;
+    
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 0;
+}
+
+.grid div{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.grid div img{
+    height: 100%;
+    width: 100%;
+}
