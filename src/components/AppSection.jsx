@@ -1,18 +1,69 @@
 import styles from "./AppSection.module.css";
 import successStyles from "./SuccessSection.module.css";
-
-import { useRef, useState } from "react";
+import { useState } from "react";
+//import { useRef} from "react";
 import { useDropzone } from "react-dropzone";
 import axios from "axios";
 import Loading from "./Loading";
-import "./Loading.module.css";
+
+const DISEASES = [
+  {
+    name: "Melanocytic nevus",
+    info: [
+      "Sun Protection: Use sunscreen, wear protective clothing, and avoid tanning beds.",
+      "Know Risk Factors: Understand your melanoma risk factors.",
+      "Monitor Changes: Watch for mole changes like itching or rapid growth.",
+      "Healthy Lifestyle: Maintain a healthy diet and lifestyle.",
+      "Educate Yourself: Stay informed about skin health.",
+      "Consult Dermatologist: Schedule regular skin checks.",
+    ],
+  },
+  {
+    name: "Actinic keratosis",
+    info: [
+      "Sun Protection: Use sunscreen, wear protective clothing, and avoid tanning.",
+      "Regular Skin Checks: Monitor skin for new growths or changes in existing spots.",
+      "Dermatologist Visits: Schedule regular skin checks with a dermatologist.",
+      "Moisturize: Keep skin hydrated and moisturized.",
+      "Quit Smoking: If applicable, quit smoking to reduce skin damage.",
+      "Protective Clothing: Wear long sleeves, pants, and hats outdoors.",
+      "Educate Yourself: Learn about AK and its risk factors.",
+      "Healthy Lifestyle: Maintain a balanced diet, exercise, and manage stress.",
+      "Stay Hydrated: Drink plenty of water for overall skin health.",
+    ],
+  },
+  {
+    name: "Dermatofibroma",
+    info: [
+      "Monitor Skin Changes: Regularly check for changes in dermatofibromas.",
+      "Avoid Irritation: Refrain from scratching or picking at dermatofibromas.",
+      "Protective Clothing: Wear protective clothing and sunscreen.",
+      "Consult a Dermatologist: Seek medical advice for painful or growing dermatofibromas.",
+      "Educate Yourself: Learn about dermatofibromas and treatment options.",
+      "Moisturize: Keep skin moisturized to reduce dryness.",
+    ],
+  },
+  {
+    name: "Vascular lesion",
+    info: [
+      "Monitor Changes: Regularly check for changes in vascular lesions.",
+      "Protect from Sun: Shield lesions from direct sunlight with clothing and sunscreen.",
+      "Consult Dermatologist: Seek advice for new or changing lesions, especially if they bleed or itch.",
+      "Avoid Trauma: Take precautions to prevent injury to areas with lesions.",
+      "Educate Yourself: Learn about vascular lesions and treatment options.",
+      "Moisturize: Keep skin moisturized to reduce dryness.",
+      "Monitor for Symptoms: Be aware of symptoms near lesions and report them.",
+      "Maintain Healthy Lifestyle: Follow a balanced diet, exercise, and manage stress.",
+    ],
+  },
+];
 
 function AppSection({ appRef }) {
-  const fileInputRef = useRef();
+  // const fileInputRef = useRef();
   const [loading, setLoading] = useState(false);
   const [uploadSuccess, setUploadSuccess] = useState(false);
   const [image, setImage] = useState(null);
-  const [info, setInfo] = useState(null);
+  const [diseasesName, setDiseasesName] = useState(null);
   console.log(image);
 
   const onDrop = (acceptedFiles) => {
@@ -21,7 +72,6 @@ function AppSection({ appRef }) {
     formData.append("file", file);
     setLoading(true);
     setImage(URL.createObjectURL(file));
-   
 
     axios
       .post("http://127.0.0.1:5000/upload", formData, {
@@ -33,7 +83,7 @@ function AppSection({ appRef }) {
         console.log(response.data["prediction"]);
         setLoading(false);
         setUploadSuccess(true);
-        setInfo(response.data["prediction"]);
+        setDiseasesName(response.data["prediction"]);
       })
       .catch((error) => {
         setLoading(false);
@@ -47,9 +97,9 @@ function AppSection({ appRef }) {
     accept: "image/*",
   });
 
-  const onButtonClick = () => {
-    fileInputRef.current.click();
-  };
+  // const onButtonClick = () => {
+  //   fileInputRef.current.click();
+  // };
 
   const onFileChange = (event) => {
     if (event.target.files.length > 0) {
@@ -62,7 +112,7 @@ function AppSection({ appRef }) {
     <section ref={appRef} className={styles.appSection}>
       <h1>Check Your Self & Your Patients Easly</h1>
       {loading ? (
-        <div {...getRootProps()}>
+        <div>
           <Loading />
         </div>
       ) : uploadSuccess ? (
@@ -70,10 +120,30 @@ function AppSection({ appRef }) {
           <div className={successStyles.grid}>
             <div>
               {image && (
-                <img src={image} alt="Uploaded" onLoad={() => console.log('Image loaded')} />
+                <img
+                  src={image}
+                  alt="Uploaded"
+                  onLoad={() => console.log("Image loaded")}
+                />
               )}
             </div>
-            <div>{info && <h1>{info}</h1>}</div>
+            <div>
+              {diseasesName && (
+                <div>
+                  <h1>{diseasesName}</h1>
+                  <div>
+                    <h2>Some Advices</h2>
+                    <ol>
+                      {DISEASES.filter(
+                        (item) => item.name === diseasesName
+                      )[0]?.info.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ol>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       ) : (
@@ -83,12 +153,12 @@ function AppSection({ appRef }) {
             <br />
             for disease detection
           </h1>
-          <button type="button" onClick={onButtonClick}>
+          <button type="button" /*onClick={onButtonClick}*/>
             Upload Image
           </button>
           <input
             {...getInputProps()}
-            ref={fileInputRef}
+            /*ref={fileInputRef}*/
             style={{ display: "none" }}
             onChange={onFileChange}
           />

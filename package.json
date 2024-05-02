@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
     "react-slideshow-image": "^4.3.1"
   },
   "devDependencies": {
