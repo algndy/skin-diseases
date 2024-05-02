@@ -1,12 +1,4 @@
-import styles from "./AppSection.module.css";
-import successStyles from "./SuccessSection.module.css";
-import { useState } from "react";
-//import { useRef} from "react";
-import { useDropzone } from "react-dropzone";
-import axios from "axios";
-import Loading from "./Loading";
-import ResultSection from "./ResultSection";
-
+import styles from "./ResultSection.module.css";
 const DISEASES = [
   {
     name: "Melanocytic nevus",
@@ -59,86 +51,37 @@ const DISEASES = [
   },
 ];
 
-function AppSection({ appRef }) {
-  // const fileInputRef = useRef();
-  const [loading, setLoading] = useState(false);
-  const [uploadSuccess, setUploadSuccess] = useState(false);
-  const [image, setImage] = useState(null);
-  const [diseasesName, setDiseasesName] = useState(null);
-  console.log(image);
-
-  const onDrop = (acceptedFiles) => {
-    const file = acceptedFiles[0];
-    const formData = new FormData();
-    formData.append("file", file);
-    setLoading(true);
-    setImage(URL.createObjectURL(file));
-
-    axios
-      .post("http://127.0.0.1:5000/upload", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
-      .then((response) => {
-        console.log(response.data["prediction"]);
-        setLoading(false);
-        setUploadSuccess(true);
-        setDiseasesName(response.data["prediction"]);
-      })
-      .catch((error) => {
-        setLoading(false);
-        console.error(error);
-      });
-  };
-
-  const { getRootProps, getInputProps } = useDropzone({
-    onDrop,
-    multiple: false,
-    accept: "image/*",
-  });
-
-  // const onButtonClick = () => {
-  //   fileInputRef.current.click();
-  // };
-
-  const onFileChange = (event) => {
-    if (event.target.files.length > 0) {
-      setLoading(true);
-      onDrop([event.target.files[0]]);
-    }
-  };
-
+function ResultSection({ image, diseasesName }) {
   return (
-    <section ref={appRef} className={styles.appSection}>
-      <h1>Check Your Self & Your Patients Easly</h1>
-      {loading ? (
-        <div>
-          <Loading />
-        </div>
-      ) : uploadSuccess ? (
-        <ResultSection image={image} diseasesName={diseasesName} />
-      ) : (
-        <div className={styles.uploadContainer} {...getRootProps()}>
-          <h1>
-            Upload an image
-            <br />
-            for disease detection
-          </h1>
-          <button type="button" /*onClick={onButtonClick}*/>
-            Upload Image
-          </button>
-          <input
-            {...getInputProps()}
-            /*ref={fileInputRef}*/
-            style={{ display: "none" }}
-            onChange={onFileChange}
+    <section className={styles.resultSection}>
+      <div className={styles.first}>
+        {image && (
+          <img
+            src={image}
+            alt="Uploaded"
+            onLoad={() => console.log("Image loaded")}
           />
-          <p>or drop a file</p>
-        </div>
-      )}
+        )}
+      </div>
+      <div>
+        {diseasesName && (
+          <div>
+            <h1>{diseasesName}</h1>
+            <div>
+              <h2>Some Advices</h2>
+              <ol>
+                {DISEASES.filter(
+                  (item) => item.name === diseasesName
+                )[0]?.info.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        )}
+      </div>
     </section>
   );
 }
 
-export default AppSection;
+export default ResultSection;
