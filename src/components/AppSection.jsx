@@ -117,7 +117,13 @@ function AppSection({ appRef }) {
           <Loading />
         </div>
       ) : uploadSuccess ? (
-        <ResultSection image={image} diseasesName={diseasesName} />
+        <ResultSection
+          image={image}
+          diseasesName={diseasesName}
+          setUploadSuccess={setUploadSuccess}
+          setImage={setImage}
+          setDiseasesName={setDiseasesName}
+        />
       ) : (
         <div className={styles.uploadContainer} {...getRootProps()}>
           <h1>

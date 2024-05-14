@@ -5,6 +5,7 @@ const TEAM = [
   {
     name: "Mohamed Kamal",
     photo: "team/mk.png",
+    avatar: "avatars/mk.png",
     jobTitle: "Front-End Developer",
     phones: ["01227300872"],
     socialMedia: {
@@ -43,7 +44,7 @@ function AboutUsSection({ aboutUsRef }) {
         slidesToScroll={1}
         slidesToShow={1}
         indicators={true}
-        autoplay={true}
+        autoplay={false}
       >
         {TEAM.map((teamMember, i) => (
           <div className={styles.card} key={i}>
@@ -51,7 +52,14 @@ function AboutUsSection({ aboutUsRef }) {
               <img src={teamMember.photo} width="200px" alt="homeImg.png" />
             </div>
             <div className={styles.last}>
-              <h2>{teamMember.name}</h2>
+              <span className={styles.avatarNameContainer}>
+                <img
+                  src={teamMember?.avatar}
+                  className={styles.avatar}
+                  alt="avatar"
+                />
+                <h2>{teamMember.name}</h2>
+              </span>
               <h3>{teamMember.jobTitle}</h3>
               <div className={styles.phones}>
                 {teamMember.phones.map((phone, i) => (

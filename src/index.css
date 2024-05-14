@@ -12,6 +12,9 @@
   font-family: "Outfit";
   font-weight: 400;
 }
+.react-slideshow-wrapper.slide .active {
+  overflow: hidden;
+}
 .react-slideshow-container + ul.indicators {
   display: flex;
   gap: 10px;

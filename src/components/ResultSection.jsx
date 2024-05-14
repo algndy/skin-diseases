@@ -51,7 +51,19 @@ const DISEASES = [
   },
 ];
 
-function ResultSection({ image, diseasesName }) {
+function ResultSection({
+  image,
+  diseasesName,
+  setUploadSuccess,
+  setDiseasesName,
+  setImage,
+}) {
+  function resetAnswer() {
+    setUploadSuccess(false);
+    setImage(null);
+    setDiseasesName(null);
+  }
+
   return (
     <section className={styles.resultSection}>
       <div className={styles.first}>
@@ -63,23 +75,23 @@ function ResultSection({ image, diseasesName }) {
           />
         )}
       </div>
-      <div>
-        {diseasesName && (
+
+      {diseasesName && (
+        <div className={styles.second}>
+          <h1>{diseasesName}</h1>
           <div>
-            <h1>{diseasesName}</h1>
-            <div>
-              <h2>Some Advices</h2>
-              <ol>
-                {DISEASES.filter(
-                  (item) => item.name === diseasesName
-                )[0]?.info.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ol>
-            </div>
+            <h2>Some Advices</h2>
+            <ol>
+              {DISEASES.filter(
+                (item) => item.name === diseasesName
+              )[0]?.info.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ol>
           </div>
-        )}
-      </div>
+          <button onClick={resetAnswer}>Try Again</button>
+        </div>
+      )}
     </section>
   );
 }

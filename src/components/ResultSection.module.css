@@ -1,18 +1,42 @@
 .resultSection {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='17' ry='17' stroke='%23285380FF' stroke-width='2' stroke-dasharray='15%2c 10' stroke-dashoffset='9' stroke-linecap='square'/%3e%3c/svg%3e");
   border-radius: 17px;
+  padding: 2rem;
+  gap: 30px;
 }
 .resultSection .first {
   display: flex;
 }
 .resultSection .first img {
   width: 350px;
+  aspect-ratio: 4/6;
   border-radius: 20px;
   padding: 1px;
 }
+.resultSection .second h1 {
+  margin: 1.5rem 0;
+}
+.resultSection .second h2 {
+}
 
 .resultSection ol {
+  font-size: 20px;
+  line-height: 1.8;
   text-align: left;
+}
+
+@media screen and (max-width: 1590px) {
+  .resultSection .first {
+    display: none;
+  }
+  .resultSection .second {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
 }

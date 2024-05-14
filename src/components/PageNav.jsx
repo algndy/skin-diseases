@@ -14,7 +14,9 @@ function PageNav({
       top: elemRef.current.offsetTop,
       behavior: "smooth",
     });
-    setisShowNav(false);
+    if (windowWidth <= 900) {
+      setisShowNav(false);
+    }
   }
   return (
     <ul

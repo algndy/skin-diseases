@@ -27,10 +27,20 @@
   background-color: var(--text-color);
   color: white;
 }
+.card .last .avatarNameContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  margin-bottom: 50px;
+}
+.card .last .avatar {
+  width: 50px;
+  border-radius: 100%;
+  display: none;
+}
 .card .last h2 {
   font-size: 2.5rem;
   font-weight: 300;
-  margin-bottom: 50px;
 }
 .card .last h3 {
   font-size: 1.5rem;
@@ -55,4 +65,24 @@
 .card .last .socialMedia {
   display: flex;
   gap: 10px;
+}
+@media screen and (max-width: 1100px) {
+  .card .first {
+    display: none;
+  }
+  .card .last {
+    width: 440px;
+  }
+  .card .last .avatar {
+    display: inline-block;
+  }
+
+  .card .last .avatarNameContainer {
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 450px) {
+  .card .last {
+    width: 100%;
+  }
 }
