@@ -49,6 +49,17 @@ const TEAM = [
     },
   },
   {
+    name: "Sherif Mohamed",
+    photo: "team/sm.png",
+    avatar: "avatars/sm.png",
+    jobTitle: "Back-End Developer",
+    phones: ["01012569196"],
+    socialMedia: {
+      whatsApp: "https://wa.me/01012569196",
+      linkedIn: "https://www.linkedin.com/in/sherif-mohamed-6a97141b8/",
+    },
+  },
+  {
     name: "Raed Mohamed",
     photo: "team/rm.png",
     avatar: "avatars/rm.png",
