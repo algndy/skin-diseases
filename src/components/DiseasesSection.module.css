@@ -30,6 +30,8 @@
 }
 .card img {
   border-radius: 10px;
+  width: 317px;
+  height: 480px;
 }
 .card div:last-child {
   display: flex;
