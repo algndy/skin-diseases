@@ -16,6 +16,7 @@ const TEAM = [
   {
     name: "Banoub Nagy",
     photo: "team/bn.png",
+    avatar: "avatars/bn.png",
     jobTitle: "AI Developer",
     phones: ["01024071289"],
     socialMedia: {
@@ -26,12 +27,36 @@ const TEAM = [
   {
     name: "Maryam Mohamed",
     photo: "team/mm.png",
+    avatar: "avatars/mm.png",
     jobTitle: "AI Developer",
     phones: ["01006517272", "01210400751"],
     socialMedia: {
       whatsApp: "https://wa.me/201006517272",
       linkedIn: "https://www.linkedin.com/in/maryam-mohamedd/",
       facebook: "https://www.facebook.com/profile.php?id=100012562810123",
+    },
+  },
+  {
+    name: "Rowan Abdelkader",
+    photo: "team/ra.png",
+    avatar: "avatars/ra.png",
+    jobTitle: "AI Developer",
+    phones: ["01229671297", "01507166626"],
+    socialMedia: {
+      whatsApp: "https://wa.me/01229671297",
+      linkedIn: "https://www.linkedin.com/in/rowan-abdelkader-877000244",
+      facebook: "https://www.facebook.com/rowan.roro.3?mibextid=LQQJ4d",
+    },
+  },
+  {
+    name: "Raed Mohamed",
+    photo: "team/rm.png",
+    avatar: "avatars/rm.png",
+    jobTitle: "Front-End Developer",
+    phones: ["01277053851"],
+    socialMedia: {
+      whatsApp: "https://wa.me/01277053851",
+      linkedIn: "https://www.linkedin.com/in/raed--mohamed/",
     },
   },
 ];
