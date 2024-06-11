@@ -20,7 +20,7 @@ function App() {
       <Header appRef={app} aboutUsRef={aboutUs} discoverRef={discover} />
       <Main>
         <>
-          <HomeSection homeRef={home} />
+          <HomeSection homeRef={home} appRef={app} />
           <DiseasesSection discoverRef={discover} />
           <ConsultSection />
           <AppSection appRef={app} />

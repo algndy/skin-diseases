@@ -91,3 +91,9 @@
     transform: scaleY(-1) rotate(-135deg);
   }
 }
+
+@media screen and (max-width: 500px) {
+  .loader {
+    width: 300px;
+  }
+}

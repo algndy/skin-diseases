@@ -1,5 +1,11 @@
 import styles from "./HomeSection.module.css";
-function HomeSection({ homeRef }) {
+function HomeSection({ homeRef, appRef }) {
+  function handleScrollTo(elemRef) {
+    window.scrollTo({
+      top: elemRef.current.offsetTop,
+      behavior: "smooth",
+    });
+  }
   return (
     <section className={styles.homeSection} ref={homeRef}>
       <div>
@@ -12,7 +18,7 @@ function HomeSection({ homeRef }) {
           <br />
           the stage of your skin disease
         </p>
-        <button>TRY NOW</button>
+        <button onClick={() => handleScrollTo(appRef)}>TRY NOW</button>
       </div>
       <div>
         <img src="homeImg.png" alt="homeImg" />

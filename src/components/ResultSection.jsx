@@ -57,13 +57,23 @@ function ResultSection({
   setUploadSuccess,
   setDiseasesName,
   setImage,
+  appRef,
 }) {
   function resetAnswer() {
     setUploadSuccess(false);
     setImage(null);
     setDiseasesName(null);
   }
-
+  function handleScrollTo(elemRef) {
+    window.scrollTo({
+      top: elemRef.current.offsetTop,
+      behavior: "smooth",
+    });
+  }
+  function handleOnClick() {
+    resetAnswer();
+    handleScrollTo(appRef);
+  }
   return (
     <section className={styles.resultSection}>
       <div className={styles.first}>
@@ -89,7 +99,7 @@ function ResultSection({
               ))}
             </ol>
           </div>
-          <button onClick={resetAnswer}>Try Again</button>
+          <button onClick={handleOnClick}>Try Again</button>
         </div>
       )}
     </section>

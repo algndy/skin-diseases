@@ -123,6 +123,7 @@ function AppSection({ appRef }) {
           setUploadSuccess={setUploadSuccess}
           setImage={setImage}
           setDiseasesName={setDiseasesName}
+          appRef={appRef}
         />
       ) : (
         <div className={styles.uploadContainer} {...getRootProps()}>
